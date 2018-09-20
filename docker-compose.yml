@@ -27,6 +27,8 @@ services :
         - "127.0.0.1:9800:9000"
         volumes :
         - /home/docker/web:/var/www/html:rw # web站点目录
+        - /home/docker/php/php.ini:/usr/local/etc/php/php.ini:ro #php配置文件
+        - /home/docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro #php-fpm配置文件
         networks:
         - php-net
         - mysql-net

@@ -1,0 +1,90 @@
+2019-04-15T08:10:24.949063Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T08:10:25.216408Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T08:10:25.221677Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.221711Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.221719Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.221736Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.221741Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.221750Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.223393Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:25.223409Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.477083Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T08:10:32.807870Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T08:10:32.815451Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.815494Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.815507Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.815536Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.815543Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.815567Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.818201Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:10:32.818225Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.350410Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T08:33:41.722459Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T08:33:41.727888Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.727933Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.727954Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.728010Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.728020Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.728034Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.729671Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T08:33:41.729686Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:45.030627Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:12:46.382089Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:12:46.450984Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.451043Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.451055Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.482326Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.482360Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.482917Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.712759Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:12:46.712791Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.136047Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:24:06.428592Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:24:06.433703Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.433730Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.433739Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.433758Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.433762Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.433773Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.585976Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:06.586008Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.588013Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:24:16.881834Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:24:16.886415Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.886441Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.886449Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.886466Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.886471Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:16.886480Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:17.099796Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:24:17.099819Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:43.935991Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:30:44.234466Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:30:44.239337Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.239367Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.239376Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.239394Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.239398Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.239408Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.339559Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:30:44.339582Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:32:59.827971Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:33:00.132484Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:33:00.138286Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.138322Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.138330Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.138348Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.138352Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.138382Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.252317Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:00.252337Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.376009Z 0 [Warning] You need to use --log-bin to make --binlog-format work.
+2019-04-15T09:33:07.701245Z 0 [Warning] CA certificate ca.pem is self signed.
+2019-04-15T09:33:07.705960Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.705987Z 0 [Warning] 'user' entry 'mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.706008Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.706026Z 0 [Warning] 'db' entry 'performance_schema mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.706031Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.706041Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.835057Z 0 [Warning] 'tables_priv' entry 'user mysql.session@localhost' ignored in --skip-name-resolve mode.
+2019-04-15T09:33:07.835077Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.

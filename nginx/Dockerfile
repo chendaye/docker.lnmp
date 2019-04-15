@@ -1,5 +1,5 @@
-FROM nginx:1.14.0
-MAINTAINER mr.xu "var_dump@foxmail.com"
+FROM nginx:stable
+LABEL maintainer="chendaye666<chendaye666@gmail.com>"
 
 ENV TZ "Asia/Shanghai"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone

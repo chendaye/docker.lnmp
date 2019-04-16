@@ -1,5 +1,6 @@
 version: '3'
 services:
+    # nginx
     nginx:
         depends_on:  # 依赖于服务 php
             - php
@@ -18,6 +19,7 @@ services:
         container_name: long-nginx
         networks:
             - lnmp-net
+    # php-7.3
     php:
         depends_on:
             - mysql
@@ -35,6 +37,7 @@ services:
         networks:
             - lnmp-net    
         container_name: long-php # 容器名称   
+    # mysql 5.7
     mysql:
         #image: mysql:5.7
         command: --default-authentication-plugin=mysql_native_password #覆盖容器启动后默认执行的命令
@@ -52,6 +55,7 @@ services:
             - lnmp-net
         restart: always
         container_name: long-mysql
+    # redis
     redis:
         #image: redis:5.0-alpine
         build : ./redis
@@ -66,6 +70,45 @@ services:
             - /data/docker.lnmp/redis/log/redis.log:/data/redis.log
         restart: always
         container_name: long-redis
+
+    # memcached
+    memcached:
+        build : ./memcached
+        hostname: long-memcached
+        restart: always
+        ports:
+            - "11211:11211"
+        networks:
+            - lnmp-net
+        container_name: long-memcached
+    # mongo
+    mongo:
+        build : ./mongo
+        hostname: long-mongo
+        restart: always
+        ports:
+            - 27017:27017  # 本地端口(可自定义):容器内默认端口(mongo设定为27017)
+        volumes:
+            - /data/web/mongo:/data/db
+        networks:
+            - lnmp-net
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: long
+        container_name: long-mongo
+    # mongo web管理界面
+    mongo-express:
+        build : ./mongo-express
+        restart: always
+        networks:
+            - lnmp-net
+        ports:
+            - 8081:8081
+        environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: long
+        container_name: long-mongo-express
+    # phpmyadmin
     phpmyadmin:
         # 设置远程连接mysql ： 编辑 my.cnf (mysqld.cnf)bind-address = 0.0.0.0;
         image: phpmyadmin/phpmyadmin:latest
@@ -82,6 +125,7 @@ services:
             - PMA_USER=root
             - PMA_PASSWORD=long
         container_name: long-phpmyadmin
+    # phpredisadmin
     phpredisadmin:
         image: erikdubbelboer/phpredisadmin:latest
         ports:

@@ -1,5 +1,4 @@
 version: '3'
-
 services:
     nginx:
         depends_on:  # 依赖于服务 php
@@ -48,7 +47,7 @@ services:
             - /data/docker.lnmp/mysql/my.cnf:/etc/mysql/my.cnf # mysql 配置文件
             - /data/docker.lnmp/mysql/log/:/var/log/mysql/:rw  # mysql 日志
         environment:
-            MYSQL_ROOT_PASSWORD: long  
+            MYSQL_ROOT_PASSWORD: long
         networks:
             - lnmp-net
         restart: always
@@ -68,14 +67,20 @@ services:
         restart: always
         container_name: long-redis
     phpmyadmin:
+        # 设置远程连接mysql ： 编辑 my.cnf (mysqld.cnf)bind-address = 0.0.0.0;
         image: phpmyadmin/phpmyadmin:latest
+        links:
+            # --link代表容器本容器与mysql连接，并起一个别名为db
+            - mysql:db
         ports:
             - "8082:80"
         networks:
             - lnmp-net
         environment:
             - PMA_HOST=long-mysql
-            - PMA_PORT=3308
+            - PMA_PORT=3306
+            - PMA_USER=root
+            - PMA_PASSWORD=long
         container_name: long-phpmyadmin
     phpredisadmin:
         image: erikdubbelboer/phpredisadmin:latest

@@ -4,6 +4,9 @@
 
 ### :book: 目录
 
+* [快捷设置](#快捷键)
+    *   [部署环境要求](#快速进入开发目录)
+    *   [快速启动](#快速进入容器)
 * [Docker简介](#Docker简介)
 * [为什么使用Docker](#为什么使用Docker)
 * [版本更新](#版本更新)
@@ -29,6 +32,20 @@
     * [本地生成HTTPS](#本地生成HTTPS)
     * [Docker生成HTTPS](#Docker生成HTTPS)
 * [遇到的问题](#遇到的问题)
+### 快捷设置
+* 快速进入开发目录
+    * alias lnmp='cd /data/docker.lnmp/'
+    * alias demo='cd /data/web/www/'
+    * alias lengo='cd /data/web/www/lengo'
+    * alias client='cd /data/web/www/lengo/client'
+ * 快速进入容器
+     * alias web='docker-compose up -d && docker-compose restart'
+     * alias dphp='docker exec -it long-php /bin/bash'
+     * alias dnginx='docker exec -it long-nginx /bin/bash'
+     * alias dmysql='docker exec -it long-mysql /bin/bash'
+     * alias dredis='docker exec -it long-redis /bin/bash'
+     * alias dmemcached='docker exec -it long-memcached /bin/bash'
+     * alias dmongo='docker exec -it long-mongo /bin/bash'
 
 ### Docker简介
 

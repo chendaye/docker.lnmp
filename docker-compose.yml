@@ -1,144 +1,144 @@
-version: '3'
+version: "3"
 services:
-    # nginx
-    nginx:
-        depends_on:  # 依赖于服务 php
-            - php
-        build : ./nginx
-        #image: nginx:1.14.2-alpine
-        ports:
-            - "80:80"
-            - "81:81" # 宿主:容器
-            - "82:82" # 宿主:容器
-            - "83:83" # 宿主:容器
-        volumes:
-           - /data/docker.lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf # 配置文件
-           - /data/docker.lnmp/nginx/conf.d:/etc/nginx/conf.d  # 配置文件
-           - /data/docker.lnmp/nginx/log:/var/log/nginx  # 日志文件
-           - /data/web/www:/var/www/html
-        restart: always
-        environment:
-           TZ: Asia/Shanghai  
-        container_name: long-nginx
-        networks:
-            - lnmp-net
-    # php-7.3
-    php:
-        depends_on:
-            - mysql
-            - redis
-        #image: tinywan/dnmp:php7.2-v1
-        build : ./php
-        ports:
-            - "9000:9000"
-        volumes:
-            - /data/web/www:/var/www/html
-            - /data/docker.lnmp/php/log/:/var/log/php/:rw
-            - /data/docker.lnmp/php/php.ini:/usr/local/php/etc/php.ini
-            - /data/docker.lnmp/php/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
-            - /data/docker.lnmp/php/php-fpm.d/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
-        networks:
-            - lnmp-net    
-        container_name: long-php # 容器名称   
-    # mysql 5.7
-    mysql:
-        #image: mysql:5.7
-        command: --default-authentication-plugin=mysql_native_password #覆盖容器启动后默认执行的命令
-        build : ./mysql # 使用Dockerfile文件
-        hostname: long-mysql
-        ports:
-            - "3306:3306"
-        volumes:
-            - /data/web/mysql:/var/lib/mysql # mysql 数据文件
-            - /data/docker.lnmp/mysql/my.cnf:/etc/mysql/my.cnf # mysql 配置文件
-            - /data/docker.lnmp/mysql/log/:/var/log/mysql/:rw  # mysql 日志
-        environment:
-            MYSQL_ROOT_PASSWORD: long
-        networks:
-            - lnmp-net
-        restart: always
-        container_name: long-mysql
-    # redis
-    redis:
-        #image: redis:5.0-alpine
-        build : ./redis
-        hostname: long-redis
-        ports:
-            - "6379:6379"
-        command: redis-server /usr/local/etc/redis/redis.conf    
-        networks:
-            - lnmp-net      
-        volumes:
-            - /data/docker.lnmp/redis/redis.conf:/usr/local/etc/redis/redis.conf
-            - /data/docker.lnmp/redis/log/redis.log:/data/redis.log
-        restart: always
-        container_name: long-redis
+  # nginx
+  nginx:
+    depends_on: # 依赖于服务 php
+      - php
+    build: ./nginx
+    #image: nginx:1.14.2-alpine
+    ports:
+      - "80:80"
+      - "81:81" # 宿主:容器
+      - "82:82" # 宿主:容器
+      - "83:83" # 宿主:容器
+    volumes:
+      - /data/docker.lnmp/nginx/nginx.conf:/etc/nginx/nginx.conf # 配置文件
+      - /data/docker.lnmp/nginx/conf.d:/etc/nginx/conf.d # 配置文件
+      - /data/docker.lnmp/nginx/log:/var/log/nginx # 日志文件
+      - /data/web/www:/var/www/html
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+    container_name: long-nginx
+    networks:
+      - lnmp-net
+  # php-7.3
+  php:
+    depends_on:
+      - mysql
+      - redis
+    #image: tinywan/dnmp:php7.2-v1
+    build: ./php
+    ports:
+      - "9000:9000"
+    volumes:
+      - /data/web/www:/var/www/html
+      - /data/docker.lnmp/php/log/:/var/log/php/:rw
+      - /data/docker.lnmp/php/php.ini:/usr/local/php/etc/php.ini
+      - /data/docker.lnmp/php/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
+      - /data/docker.lnmp/php/php-fpm.d/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
+    networks:
+      - lnmp-net
+    container_name: long-php # 容器名称
+  # mysql 5.7
+  mysql:
+    #image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password #覆盖容器启动后默认执行的命令
+    build: ./mysql # 使用Dockerfile文件
+    hostname: long-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - /data/web/mysql:/var/lib/mysql # mysql 数据文件
+      - /data/docker.lnmp/mysql/my.cnf:/etc/mysql/my.cnf # mysql 配置文件
+      - /data/docker.lnmp/mysql/log/:/var/log/mysql/:rw # mysql 日志
+    environment:
+      MYSQL_ROOT_PASSWORD: long
+    networks:
+      - lnmp-net
+    restart: always
+    container_name: long-mysql
+  # redis
+  redis:
+    #image: redis:5.0-alpine
+    build: ./redis
+    hostname: long-redis
+    ports:
+      - "6379:6379"
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - lnmp-net
+    volumes:
+      - /data/docker.lnmp/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - /data/docker.lnmp/redis/log/redis.log:/data/log/redis.log
+    restart: always
+    container_name: long-redis
 
-    # memcached
-    memcached:
-        build : ./memcached
-        hostname: long-memcached
-        restart: always
-        ports:
-            - "11211:11211"
-        networks:
-            - lnmp-net
-        container_name: long-memcached
-    # mongo
-    mongo:
-        build : ./mongo
-        hostname: long-mongo
-        restart: always
-        ports:
-            - 27017:27017  # 本地端口(可自定义):容器内默认端口(mongo设定为27017)
-        volumes:
-            - /data/web/mongo:/data/db
-        networks:
-            - lnmp-net
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: root
-            MONGO_INITDB_ROOT_PASSWORD: long
-        container_name: long-mongo
-    # mongo web管理界面
-    mongo-express:
-        build : ./mongo-express
-        restart: always
-        networks:
-            - lnmp-net
-        ports:
-            - 8081:8081
-        environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: root
-            ME_CONFIG_MONGODB_ADMINPASSWORD: long
-        container_name: long-mongo-express
-    # phpmyadmin
-    phpmyadmin:
-        # 设置远程连接mysql ： 编辑 my.cnf (mysqld.cnf)bind-address = 0.0.0.0;
-        image: phpmyadmin/phpmyadmin:latest
-        links:
-            # --link代表容器本容器与mysql连接，并起一个别名为db
-            - mysql:db
-        ports:
-            - "8082:80"
-        networks:
-            - lnmp-net
-        environment:
-            - PMA_HOST=long-mysql
-            - PMA_PORT=3306
-            - PMA_USER=root
-            - PMA_PASSWORD=long
-        container_name: long-phpmyadmin
-    # phpredisadmin
-    phpredisadmin:
-        image: erikdubbelboer/phpredisadmin:latest
-        ports:
-            - "8083:80"
-        networks:
-            - lnmp-net
-        environment:
-            - REDIS_1_HOST=redis
-            - REDIS_1_PORT=6379
-        container_name: long-phpredisadmin
+  # memcached
+  memcached:
+    build: ./memcached
+    hostname: long-memcached
+    restart: always
+    ports:
+      - "11211:11211"
+    networks:
+      - lnmp-net
+    container_name: long-memcached
+  # mongo
+  mongo:
+    build: ./mongo
+    hostname: long-mongo
+    restart: always
+    ports:
+      - 27017:27017 # 本地端口(可自定义):容器内默认端口(mongo设定为27017)
+    volumes:
+      - /data/web/mongo:/data/db
+    networks:
+      - lnmp-net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: long
+    container_name: long-mongo
+  # mongo web管理界面
+  mongo-express:
+    build: ./mongo-express
+    restart: always
+    networks:
+      - lnmp-net
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: long
+    container_name: long-mongo-express
+  # phpmyadmin
+  phpmyadmin:
+    # 设置远程连接mysql ： 编辑 my.cnf (mysqld.cnf)bind-address = 0.0.0.0;
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      # --link代表容器本容器与mysql连接，并起一个别名为db
+      - mysql:db
+    ports:
+      - "8082:80"
+    networks:
+      - lnmp-net
+    environment:
+      - PMA_HOST=long-mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=long
+    container_name: long-phpmyadmin
+  # phpredisadmin
+  phpredisadmin:
+    image: erikdubbelboer/phpredisadmin:latest
+    ports:
+      - "8083:80"
+    networks:
+      - lnmp-net
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+    container_name: long-phpredisadmin
 networks:
   lnmp-net:
-    driver: bridge   
+    driver: bridge

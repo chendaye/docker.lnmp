@@ -51,7 +51,7 @@ services:
     volumes:
       - /data/web/mysql:/var/lib/mysql # mysql 数据文件
       - /data/docker.lnmp/mysql/my.cnf:/etc/mysql/my.cnf # mysql 配置文件
-      - /data/docker.lnmp/mysql/log/:/var/log/mysql/:rw # mysql 日志
+      - /data/docker.lnmp/mysql/log:/var/log/mysql:rw # mysql 日志
     environment:
       MYSQL_ROOT_PASSWORD: long
     networks:

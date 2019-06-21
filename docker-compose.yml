@@ -29,11 +29,16 @@ services:
       - redis
     #image: tinywan/dnmp:php7.2-v1
     build: ./php
+    environment:
+      # fastdfs
+      - IP=192.168.4.212
+      - FDFS_PORT=22122
     ports:
       - "9000:9000"
     volumes:
       - /data/web/www:/var/www/html
       - /data/docker.lnmp/php/log/:/var/log/php/:rw
+      # - /data/docker.lnmp/php/:/usr/local/php/etc/:rw
       - /data/docker.lnmp/php/php.ini:/usr/local/php/etc/php.ini
       - /data/docker.lnmp/php/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
       - /data/docker.lnmp/php/php-fpm.d/www.conf:/usr/local/php/etc/php-fpm.d/www.conf

@@ -31,15 +31,14 @@ services:
     build: ./php
     environment:
       # fastdfs
-      - IP=192.168.4.212
-      - FDFS_PORT=22122
+      IP: 192.168.4.212
+      FDFS_PORT: 22122
     ports:
       - "9000:9000"
     volumes:
       - /data/web/www:/var/www/html
       - /data/docker.lnmp/php/log/:/var/log/php/:rw
-      # - /data/docker.lnmp/php/:/usr/local/php/etc/:rw
-      - /data/docker.lnmp/php/php.ini:/usr/local/php/etc/php.ini
+      - /data/docker.lnmp/php/php.ini:/usr/local/etc/php/php.ini
       - /data/docker.lnmp/php/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
       - /data/docker.lnmp/php/php-fpm.d/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
     networks:
@@ -160,7 +159,7 @@ services:
       - FASTDFS_IPADDR=192.168.4.212
     volumes:
       # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。
-      - /data/web/fastdfs/storage:/home/dfs
+      - /data/web/fastdfs:/home/dfs
       # 配置
       - /data/docker.lnmp/fastdfs/conf:/etc/fdfs
     container_name: long-fastdfs

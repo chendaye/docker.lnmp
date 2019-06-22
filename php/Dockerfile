@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.0-fpm
 LABEL maintainer="chendaye666<chendaye666@gmail.com>"
 
 ENV TZ "Asia/Shanghai"
@@ -67,6 +67,8 @@ ENV WEB_PORT 8888
 # 默认fastdfs端口
 ENV FDFS_PORT 22122
 
+ENV IP 192.168.4.212
+
 # 安装 编译扩展 procps
 RUN apt-get update \
     && apt-get install -y git procps  gcc  make automake autoconf libtool  wget openssl libssl-dev
@@ -110,5 +112,8 @@ RUN   cd /usr/local/src/fastdfs/php_client \
 RUN cp /usr/local/src/fastdfs/conf/client.conf /etc/fdfs/client.conf \
     # && cp /usr/local/src/fastdfs/php_client/fastdfs_client.ini /usr/local/php/etc/fastdfs_client.ini \
     # && cat  /usr/local/src/fastdfs/php_client/fastdfs_client.ini >> /usr/local/php/etc/php.ini \
+    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini \
+    && cp /usr/local/src/fastdfs/php_client/fastdfs_client.ini /usr/local/etc/php/fastdfs_client.ini \
+    && cat  /usr/local/src/fastdfs/php_client/fastdfs_client.ini >> /usr/local/etc/php/php.ini \
     && cd /etc/fdfs/ \
     && sed -i "s/^tracker_server=.*$/tracker_server=$IP:$FDFS_PORT/g" /etc/fdfs/client.conf 

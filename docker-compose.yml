@@ -158,11 +158,11 @@ services:
     environment:
       # 容器环境变量
       - FASTDFS_IPADDR=192.168.4.212
-    volumes:
-      # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。
-      - /data/web/fastdfs/storage:/home/dfs
-      # 配置
-      - /data/docker.lnmp/fastdfs/conf:/etc/fdfs
+    # volumes:
+    #   # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。
+    #   # - /data/web/fastdfs/storage/:/home/dfs/
+    #   # 配置
+    #   - /data/docker.lnmp/fastdfs/conf:/etc/fdfs
     container_name: long-fastdfs
 
 networks:

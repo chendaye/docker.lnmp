@@ -31,7 +31,7 @@ services:
     build: ./php
     environment:
       # fastdfs
-      IP: 34.74.76.114
+      IP: 10.142.0.3
       FDFS_PORT: 22122
     ports:
       - "9000:9000"

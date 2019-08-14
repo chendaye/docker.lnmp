@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#主要用来初始化容器的变量 比如IP端口啥的。这样容器具有可移植性
 new_val=$FASTDFS_IPADDR
 old="com.ikingtech.ch116221"
 

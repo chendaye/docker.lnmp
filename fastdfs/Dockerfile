@@ -39,4 +39,6 @@ VOLUME /etc/fdfs
 VOLUME /home/dfs
 
 EXPOSE 22122 23000 8888 80
+
+# 起动容器前要执行的脚本，用来初始化容器
 ENTRYPOINT ["/home/fastdfs.sh"]

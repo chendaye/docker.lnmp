@@ -554,3 +554,19 @@ $ docker run --rm  -it -v "D:\Git\docker-lnmp\dev\nginx\v5\etc\letsencrypt":/acm
 
 ![images](images/Docker_Install_mostov_twitter-_-facebook-2.png)
 
+888
+8088
+#docker
+alias lnmp='cd /data/docker.lnmp/'
+alias demo='cd /data/web/www/'
+alias lengo='cd /data/web/www/lengo'
+alias client='cd /data/web/www/lengo/client'
+
+alias web='docker-compose up -d && docker-compose restart'
+alias dphp='docker exec -it long-php /bin/bash'
+alias dnginx='docker exec -it long-nginx /bin/bash'
+alias dmysql='docker exec -it long-mysql /bin/bash'
+alias dredis='docker exec -it long-redis /bin/bash'
+alias dmemcached='docker exec -it long-memcached /bin/bash'
+alias dmongo='docker exec -it long-mongo /bin/bash'
+alias dfastdfs='docker exec -it long-fastdfs /bin/bash'

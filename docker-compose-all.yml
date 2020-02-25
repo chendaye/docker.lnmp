@@ -78,6 +78,72 @@ services:
     restart: always
     container_name: long-redis
 
+  # memcached
+  memcached:
+    build: ./memcached
+    hostname: long-memcached
+    restart: always
+    ports:
+      - "11211:11211"
+    networks:
+      - lnmp-net
+    container_name: long-memcached
+  # mongo
+  mongo:
+    build: ./mongo
+    hostname: long-mongo
+    restart: always
+    ports:
+      - 27017:27017 # 本地端口(可自定义):容器内默认端口(mongo设定为27017)
+    volumes:
+      - /data/web/mongo:/data/db
+    networks:
+      - lnmp-net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: long
+    container_name: long-mongo
+  # mongo web管理界面
+  mongo-express:
+    build: ./mongo-express
+    restart: always
+    networks:
+      - lnmp-net
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: long
+    container_name: long-mongo-express
+  # phpmyadmin
+  phpmyadmin:
+    # 设置远程连接mysql ： 编辑 my.cnf (mysqld.cnf)bind-address = 0.0.0.0;
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      # --link代表容器本容器与mysql连接，并起一个别名为db
+      - mysql:db
+    ports:
+      - "8082:80"
+    networks:
+      - lnmp-net
+    environment:
+      - PMA_HOST=long-mysql
+      - PMA_PORT=3306
+      - PMA_USER=root
+      - PMA_PASSWORD=long
+    container_name: long-phpmyadmin
+  # phpredisadmin
+  phpredisadmin:
+    image: erikdubbelboer/phpredisadmin:latest
+    ports:
+      - "8083:80"
+    networks:
+      - lnmp-net
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+    container_name: long-phpredisadmin
+
   # fastdfs
   fastdfs:
     build: ./fastdfs

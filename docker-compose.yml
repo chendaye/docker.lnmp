@@ -89,7 +89,7 @@ services:
     networks:
       - lnmp-net
     environment:
-      # 容器环境变量 172.16.0.11
+      # 容器环境变量 172.17.0.16
       - FASTDFS_IPADDR=172.17.0.16
     volumes:
       # 将本地目录映射到docker容器内的fastdfs数据存储目录，将fastdfs文件存储到主机上，以免每次重建docker容器，之前存储的文件就丢失了。

@@ -56,7 +56,7 @@ npm install
 
 #追加内容
 echo "#docker
-alias lnmp='cd /data/docker.lnmp/'
+alias lnmp='cd /data/web/www/docker.lnmp/'
 alias demo='cd /data/web/www/'
 alias bak='cd /data/web/backup/'
 alias lengo='cd /data/web/www/lengo'

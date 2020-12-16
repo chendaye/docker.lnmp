@@ -1,3 +1,3 @@
-0 3 */1 * * /data/docker.lnmp/shell/lengo.sh
+0 3 */1 * * /data/web/www/docker.lnmp/shell/lengo.sh
 
 # 每两天凌晨3点执行一次 

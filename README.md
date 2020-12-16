@@ -34,7 +34,7 @@
 * [遇到的问题](#遇到的问题)
 ### 快捷设置
 * 快速进入开发目录
-    * alias lnmp='cd /data/docker.lnmp/'
+    * alias lnmp='cd /data/web/www/docker.lnmp/'
     * alias demo='cd /data/web/www/'
     * alias lengo='cd /data/web/www/lengo'
     * alias client='cd /data/web/www/lengo/client'
@@ -557,7 +557,7 @@ $ docker run --rm  -it -v "D:\Git\docker-lnmp\dev\nginx\v5\etc\letsencrypt":/acm
 888
 8088
 #docker
-alias lnmp='cd /data/docker.lnmp/'
+alias lnmp='cd /data/web/www/docker.lnmp/'
 alias demo='cd /data/web/www/'
 alias lengo='cd /data/web/www/lengo'
 alias client='cd /data/web/www/lengo/client'

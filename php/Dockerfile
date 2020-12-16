@@ -52,7 +52,7 @@ RUN mkdir -p /usr/local/share/composer \
     && composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 # docker
-#alias lnmp='cd /data/docker.lnmp/'
+#alias lnmp='cd /data/web/www/docker.lnmp/'
 #alias demo='cd /data/web/www/'
 #alias web='docker-compose up -d && docker-compose restart'cd
 #alias dphp='docker exec -it long-php /bin/bash'

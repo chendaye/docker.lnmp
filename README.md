@@ -1,3 +1,14 @@
+## 错误解决
+
+### 无法上传图片
+
+> 查看本机内网地址是否有变化
+
+### 无法重新构建容器
+
+> 如果build时连不上网络：docker build --network host ./fastdfs  
+> docker tag 500b941e6f79 dockerlnmp_redis:latest
+
 ![images](images/docker-composer-lnmp.png)
 
 ##  使用 docker-compose 部署 LNMP 环境

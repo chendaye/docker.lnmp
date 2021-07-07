@@ -87,7 +87,7 @@ services:
       - "23000:23000"
       - "8011:8084"
     networks:
-      - lnmp-net # 如果build时连不上网络：docker build --network host ./fastdfs  docker tag 500b941e6f79 php:latest
+      - lnmp-net # 如果build时连不上网络：docker build --network host ./fastdfs  
     environment:
       # 容器环境变量 172.17.0.16
       - FASTDFS_IPADDR=172.17.0.16
@@ -99,7 +99,7 @@ services:
     container_name: long-fastdfs
 
 networks:
-  lnmp-net:
-    driver: bridge
-  # lnmp-net:
-  #   driver: host
+    lnmp-net:
+      driver: bridge
+    # lnmp-net:
+    #   driver: host

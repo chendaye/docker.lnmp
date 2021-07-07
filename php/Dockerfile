@@ -5,7 +5,8 @@ ENV TZ "Asia/Shanghai"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # 更新源
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+RUN apt-get update 
+#RUN apt-get install -y --no-install-recommends apt-utils
 
 RUN apt-get install -y \
     # 相关依赖必须手动安装

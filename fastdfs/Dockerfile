@@ -11,6 +11,15 @@ ADD conf/nginx.conf /etc/fdfs/
 ADD conf/mod_fastdfs.conf /etc/fdfs
 
 # run
+# RUN rm -rf /etc/yum.repos.d/*.repo 
+
+# ADD conf/CentOS7-Base-163.repo /etc/yum.repos.d
+
+
+# RUN yum clean all \
+#  && yum makecache
+
+
 RUN yum update -y
 
 RUN yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim -y \

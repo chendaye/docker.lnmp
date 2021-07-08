@@ -19,9 +19,13 @@ docker rmi $(docker images -q)
 
 ```bash
 docker build --network host ./fastdfs 
-
 # 修改镜像名称
 dockerlnmp_redis
 docker tag 582b01d85408 dockerlnmp_fastdfs:latest
 images
+
+
+# 或者
+docker build -t docker build -t nginx:v3 --network host ./fastdfs 
+
 ```

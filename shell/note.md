@@ -26,6 +26,6 @@ images
 
 
 # 或者
-docker build -t docker build -t nginx:v3 --network host ./fastdfs 
+docker build  -t nginx:v3 --network host ./fastdfs 
 
 ```
